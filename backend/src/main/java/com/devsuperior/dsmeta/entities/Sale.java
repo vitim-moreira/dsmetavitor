@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "seller_name")
     private String sallerName;

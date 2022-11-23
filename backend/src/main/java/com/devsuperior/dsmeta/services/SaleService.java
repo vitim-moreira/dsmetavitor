@@ -20,7 +20,7 @@ public class SaleService {
     public Page<Sale> findSales(String startDate, String endDate, Pageable pageable) {
         LocalDate currentDay = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
         LocalDate start = "".equals(startDate) ? currentDay.minusDays(365) : LocalDate.parse(startDate);
-        LocalDate end = "".equals(startDate) ? currentDay : LocalDate.parse(endDate);
+        LocalDate end = "".equals(endDate) ? currentDay : LocalDate.parse(endDate);
 
         return repository.findSales(start, end, pageable);
     }
